@@ -1,16 +1,19 @@
-<% if model.errors.any? %>
+<% if task.errors.any? %>
 
-  <div id="error_explanation" class="alert alert-warning">
-    <ul class="mb-0">
-      
-<% model.errors.full_tasks.each do |task| %>
+    <div id="error_explanation">
 
-        <li>
-<%= task %>
+
+      <ul>
+        
+<% task.errors.full_messages.each do |msg| %>
+
+          <li>
+<%= msg %>
 </li>
-      
+        
 <% end %>
 
-    </ul>
-  </div>
+      </ul>
+    </div>
+  
 <% end %>
