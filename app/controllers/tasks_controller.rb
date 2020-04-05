@@ -6,6 +6,10 @@ class TasksController < ApplicationController
    @tasks = current_user.tasks.order(id: :desc).page(params[:page])
   end
   
+  def show
+     @task = Task.find(params[:id])
+  end
+  
   def new
     @task = Task.new
   end
